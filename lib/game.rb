@@ -56,23 +56,29 @@ class Game
   end
 
   def menu_choice(choice)
-    case choice
-    when "a"
+    if choice == "a"
       @human_player.search_weapon
-    when "s"
+      return true # Action valide
+    elsif choice == "s"
       @human_player.search_health_pack
-    else
+      return true # Action valide
+    elsif choice.match?(/^\d+$/)
       index = choice.to_i
-      if index < @enemies_in_sight.length && index >= 0
+      if index >= 0 && index < @enemies_in_sight.length
         target = @enemies_in_sight[index]
         @human_player.attacks(target)
         if target.life_points <= 0
           kill_player(target)
           @players_left -= 1
         end
+        return true # Action valide
       else
-        puts "Commande invalide, tu trébuches dans le vide !"
+        puts "\n❌ Erreur : Ce numéro n'est pas dans la liste !"
+        return false # Action invalide, on va redemander
       end
+    else
+      puts "\n❌ Erreur : Commande invalide (choisis a, s, ou un chiffre)."
+      return false # Action invalide
     end
   end
 
