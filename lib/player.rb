@@ -19,9 +19,9 @@ class Player
   end
 
   def attacks(player_to_attack)
-    puts "Le joueur #{@name} attaque le joueur #{player_to_attack.name}"
+    puts "\n⚔️  #{@name} lance une attaque sur #{player_to_attack.name} !"
     damage = compute_damage
-    puts "Il lui inflige #{damage} points de dommages"
+    puts "💥 ET BAMMM ! #{damage} points de dégâts."
     player_to_attack.gets_damage(damage)
   end
 
