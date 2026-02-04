@@ -12,7 +12,7 @@ name = gets.chomp
 name = "Voy" if name.strip.empty?
 
 # Initialisation avec stats de base équilibrées
-user = HumanPlayer.new(name, {str:2, dex:2, con:2, luck:2, int:2})
+user = HumanPlayer.new(name, {str:1, dex:1, con:1, luck:1, int:1})
 game = Game.new(user)
 game.distribute_lvl_points(5)
 

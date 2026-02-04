@@ -1,4 +1,5 @@
-=begin class Game
+=begin 
+class Game
   attr_accessor :human_player, :enemies_in_sight, :players_left
 
   def initialize(name)
@@ -108,6 +109,8 @@
   end
 end
 =end
+
+
 
 class Game
   attr_accessor :human_player, :enemies_in_sight, :palier, :enemies_defeated_in_palier

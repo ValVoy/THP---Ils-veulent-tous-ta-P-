@@ -208,18 +208,19 @@ class Enemy < Player
     case @type
     when "Tank" then @life_points = 50 + (@level * 10); @dex = 0
     when "Soigneur" then @life_points = 30 + (@level * 5); @dex = 0
-    when "Rôdeur" then @life_points = 20 + (@level * 5); @dex = 10 + @level
-    when "Guerrier" then @life_points = 40 + (@level * 8); @dex = 5
+    when "Rôdeur" then @life_points = 20 + (@level * 5); @dex = 10 + (@level * 3)
+    when "Guerrier" then @life_points = 40 + (@level * 8); @dex = 5; @str = 8 + (@level * 3)
     end
   end
 
   def compute_damage
     dmg = case @type
-          when "Guerrier" then rand(5..10) + @level * 2
-          when "Rôdeur" then rand(3..7) + @level
-          when "Tank" then rand(2..4) + @level
+          when "Guerrier" then rand(5..10) + @level * 3
+          when "Rôdeur" then rand(3..7) + @level * 2
+          when "Tank" then rand(2..4) + @level * 2
           else 0
           end
     {value: dmg, type: @special_atk}
   end
 end
+ 
