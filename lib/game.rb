@@ -112,6 +112,7 @@ end
 
 
 
+
 class Game
   attr_accessor :human_player, :enemies_in_sight, :palier, :enemies_defeated_in_palier
 

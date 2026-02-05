@@ -80,6 +80,7 @@ end
 
 
 
+
 class Player
   attr_accessor :name, :life_points, :status
 
@@ -223,4 +224,3 @@ class Enemy < Player
     {value: dmg, type: @special_atk}
   end
 end
- 
